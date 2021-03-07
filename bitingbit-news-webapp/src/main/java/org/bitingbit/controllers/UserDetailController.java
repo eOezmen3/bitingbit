@@ -23,35 +23,9 @@ public class UserDetailController {
     @Produces({MediaType.APPLICATION_JSON})
     public UserDetail getUserDetail(@PathParam("id") String id) {
         UserDetail userDetail = entityManager.find(UserDetail.class, Long.parseLong(id));
-        System.out.println("**************");
-
+       
         if (userDetail == null) {
           userDetail = new UserDetail();
-            /*
-            UserRole role = new UserRole();
-            UserRole role2 = new UserRole();
-            UserRole role3 = new UserRole();
-          role.setRole(Role.ADMIN);
-            entityManager.persist(role);
-
-            role2.setRole(Role.OWNER);
-            entityManager.persist(role2);
-
-            role3.setRole(Role.USER);
-            entityManager.persist(role3);
-
-            UserRole role3 = new UserRole();
-            role3.setRole(Role.USER);
-
-            userDetail.setFirstName("Joe");
-            userDetail.setSurname("Foo");
-            userDetail.setEmailAddress("joefoo@gmail.com");
-            userDetail.setUserRole(role3);
-
-
-             */
-            // throw new WebApplicationException("User with id does not exists");
-
         }
         entityManager.find(UserDetail.class, Long.parseLong(id));
 
